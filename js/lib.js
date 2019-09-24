@@ -34,25 +34,10 @@ function convert_time(time) {
     return chosen[0].toString() + ' ' + chosen[1] + addition + ' ' + 'ago';
 }
 
-
-function get(url) {
-    let response;
-
-    $.ajax({
-        url: url,
-        data: {},   // Can be set = {'access_token': '<your_github_access_token>'} while developing
-        async: false,
-        type: 'GET',
-        success: function (data) {
-            response = data;
-        }
-    });
-    return response;
-}
-
-
-function get_latest_repo(username) {
-    let response = get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=1')[0];
+async function get_latest_repo(username) {
+    let response = await axios.get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=1');
+    response = response.data[0];
+    // let response = get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=1')[0];
 
     return {
         date: convert_time(response['created_at']),
@@ -61,8 +46,10 @@ function get_latest_repo(username) {
     }
 }
 
-function get_latest_commit(username) {
-    let response = get('https://api.github.com/users/' + username + '/events/public');
+async function get_latest_commit(username) {
+    let response = await axios.get('https://api.github.com/users/' + username + '/events/public');
+    response = response.data;
+    // let response = get('https://api.github.com/users/' + username + '/events/public');
 
     for (let i = 0; i < response.length; i++) {
         if (response[i]['type'] === 'PushEvent') {
@@ -86,8 +73,10 @@ function get_latest_commit(username) {
     }
 }
 
-function get_latest_follower(followers_count, username) {
-    let response = get('https://api.github.com/users/' + username + '/followers?per_page=1&page=' + followers_count.toString())[0];
+async function get_latest_follower(followers_count, username) {
+    let response = await axios.get('https://api.github.com/users/' + username + '/followers?per_page=1&page=' + followers_count.toString());
+    response = response.data[0];
+    // let response = get('https://api.github.com/users/' + username + '/followers?per_page=1&page=' + followers_count.toString())[0];
 
     return {
         username: response['login'],
