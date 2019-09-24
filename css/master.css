@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Mandali&display=swap');
 
 body {
-    background-color: #fafafa;
-    color: #232323;
+    background-color: #1b1b1b;
+    color: #fef;
 }
 
 .avatar {
@@ -12,12 +12,12 @@ body {
 
 .username-lg {
     font-family: 'Mandali', sans-serif;
-    color: #232323;
+    color: #fef;
     font-size: 50px;
 }
 
 .username-lg:hover {
-    color: #353b41;
+    color: red;
     text-decoration: none;
 }
 
@@ -33,11 +33,11 @@ body {
 
 .social-media-icon {
     font-size: 40px;
-    color: #232323;
+    color: #fef;
 }
 
 .social-media-icon:hover {
-    background-color: #ebebeb;
+    background-color: #fef;
     text-decoration: none;
 }
 
