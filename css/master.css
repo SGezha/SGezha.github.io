@@ -1,62 +1,158 @@
-@import url('https://fonts.googleapis.com/css?family=Mandali&display=swap');
-
-body {
-    background-color: #1b1b1b;
-    color: #fef;
+@import url('https://fonts.googleapis.com/css?family=Mandali&display=swap'); body {
+  background-color: #1b1b1b;
+  color: #fef;
 }
 
 .avatar {
-    width: 150px;
-    height: 150px;
+  width: 150px !important;
+  height: 150px !important;
 }
 
 .username-lg {
-    font-family: 'Mandali', sans-serif;
-    color: #fef;
-    font-size: 50px;
+  font-family: 'Mandali', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 1s linear infinite;
+  animation: shine 1s linear infinite;
 }
 
-.username-lg:hover {
-    color: red;
-    text-decoration: none;
-}
-
-.description {
-    font-family: 'Mandali', sans-serif;
-    font-size: 19px;
-}
-
-.status {
-    font-size: 19px;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-.social-media-icon {
-    font-size: 40px;
-    color: #fef;
-}
-
-.social-media-icon:hover {
-    background-color: #fef;
-    text-decoration: none;
-}
-
-.cur-pointer {
+i.fas.fa-sync-alt {
+    text-align: center;
+    background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: shine 1s linear infinite;
+    animation: shine 1s linear infinite;
+    transform: scale(1.2) translateY(2px);
     cursor: pointer;
 }
 
+@-webkit-keyframes shine {
+  to {
+      background-position: 200% center;
+  }
+}
+
+@keyframes shine {
+  to {
+      background-position: 200% center;
+  }
+}
+
+.username-lg:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.description {
+  font-family: 'Mandali', sans-serif;
+  font-size: 19px;
+}
+
+.status {
+  font-size: 17px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.social-media-icon {
+  font-size: 40px;
+  text-align: center;
+  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 1s linear infinite;
+  animation: shine 1s linear infinite;
+}
+
+.social-media-icon:hover {
+  background: #fef;
+  text-decoration: none;
+  border-radius: 10px;
+  -webkit-text-fill-color: #4568DC;
+}
+
+.cur-pointer {
+  cursor: pointer;
+}
+
 .slide {
-    margin-bottom: 30%;
+  margin-bottom: 30%;
 }
 
 .ff-mono {
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .fs-35 {
-    font-size: 35px;
+  font-size: 35px;
+  text-align: center;
+  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: shine 1s linear infinite;
+  animation: shine 1s linear infinite;
 }
 
 .latest-link {
-    font-size: 17px;
+  font-size: 17px;
+}
+
+.w-100.mt-5 {
+  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  height: 2px;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1s linear infinite;
+}
+
+#app {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.avatar-block {
+  margin: auto;
+  width: 155px;
+  height: 155px;
+  border: 20px solid transparent;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1em;
+  letter-spacing: 1em;
+  padding: 1rem;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-block {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(to right, #4568DC, #4568DC 50%, #B06AB3);
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 100% 100%, 100% 200%;
+  background-position: 0 0, 0 100%;
+  background-origin: padding-box, border-box;
 }
