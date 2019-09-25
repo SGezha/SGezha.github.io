@@ -35,7 +35,7 @@ function convert_time(time) {
 }
 
 async function get_latest_repo(username) {
-    let response = await axios.get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=1', {params: {'access_token': '5d510545c3ce2d81b28490b4c3848eebd767bfab'}});
+    let response = await axios.get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=1');
     response = response.data[0];
     // let response = get('https://api.github.com/users/' + username + '/repos?sort=created&per_page=1')[0];
 
@@ -47,7 +47,7 @@ async function get_latest_repo(username) {
 }
 
 async function get_latest_commit(username) {
-    let response = await axios.get('https://api.github.com/users/' + username + '/events/public', {params: {'access_token': '5d510545c3ce2d81b28490b4c3848eebd767bfab'}});
+    let response = await axios.get('https://api.github.com/users/' + username + '/events/public');
     response = response.data;
     // let response = get('https://api.github.com/users/' + username + '/events/public');
 
@@ -74,7 +74,7 @@ async function get_latest_commit(username) {
 }
 
 async function get_latest_follower(followers_count, username) {
-    let response = await axios.get('https://api.github.com/users/' + username + '/followers?per_page=1&page=' + followers_count.toString(), {params: {'access_token': '5d510545c3ce2d81b28490b4c3848eebd767bfab'}});
+    let response = await axios.get('https://api.github.com/users/' + username + '/followers?per_page=1&page=' + followers_count.toString());
     response = response.data[0];
     // let response = get('https://api.github.com/users/' + username + '/followers?per_page=1&page=' + followers_count.toString())[0];
 
