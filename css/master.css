@@ -133,8 +133,8 @@ i.fas.fa-sync-alt {
 
 .avatar-block {
   margin: auto;
-  width: 155px;
-  height: 155px;
+  width: 155px !important;
+  height: 155px !important;
   border: 20px solid transparent;
   box-sizing: border-box;
   text-transform: uppercase;
