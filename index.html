@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
+        <div id="bg"></div>
         <div id="app">
             <div class="container-fluid">
                 <div class="initial-page-wrapper">
@@ -21,8 +22,8 @@
                           <img class="avatar rounded-circle" :src="avatar">
                         </div>
                         <h1><a class="username-lg">{{username}}</a></h1>
-                        <p class="description text-muted">{{description}}</p>
-                        <p class="status text-muted font-weight-light">{{status}} <i @click="getRandomStatus" class="fas fa-sync-alt"></i></p>
+                        <p style="color: #fff !important;" class="description">{{description}}</p>
+                        <p style="color: #fff !important;" class="status font-weight-light">{{status}} <i @click="getRandomStatus" class="fas fa-sync-alt"></i></p>
                     </div>
                     <div class="social-media-links-wrapper text-center mt-4">
                         <a :href="account.url" class="social-url-wrapper p-2" v-for="account in social_media">
@@ -57,5 +58,22 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="js/lib.js"></script>
         <script src="js/master.js"></script>
+        <script>
+            window.onload = bgChange();
+            async function bgChange() {
+                let img = await axios.get(`https://nekos.life/api/v2/img/wallpaper`);
+                var myImage = new Image;
+                myImage.src = img.data.url;
+
+                waitForImageToLoad(myImage).then(() => {
+                    document.querySelector(`#bg`).style.background = `url("${img.data.url}") center center / cover`;
+                    setTimeout(() => { bgChange(); }, 3000)
+                });                
+            }
+
+            function waitForImageToLoad(imageElement){
+                return new Promise(resolve=>{imageElement.onload = resolve})
+            }
+        </script>
     </body>
 </html>

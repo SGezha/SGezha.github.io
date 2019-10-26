@@ -3,8 +3,32 @@
   color: #fef;
 }
 
+body {
+  background-color: #1b1b1b !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 .avatar {
   width: 100% !important;
+}
+
+div#bg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  z-index: -2;
+  opacity: 0.3;
+  transition: 0.5s ease;
 }
 
 .username-lg {
