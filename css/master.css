@@ -150,6 +150,11 @@ i.fas.fa-sync-alt {
 }
 
 #app {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
   opacity: 0;
   transition: 1s ease;
 }
