@@ -103,10 +103,11 @@ i.fas.fa-sync-alt {
 }
 
 .social-media-icon:hover {
-  background: #2b2b2b40;
+  background: #3d373757;
   text-decoration: none;
   border-radius: 10px;
   -webkit-text-fill-color: #4568DC;
+  transform: scale(1.2);
 }
 
 .cur-pointer {
@@ -147,6 +148,10 @@ i.fas.fa-sync-alt {
   height: 2px;
   -webkit-text-fill-color: transparent;
   animation: shine 1s linear infinite;
+}
+
+i {
+  transition: transform 0.1s linear !important;
 }
 
 #app {
