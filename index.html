@@ -30,9 +30,9 @@
                     <div class="avatar-block">
                         <img class="avatar rounded-circle" :src="avatar">
                     </div>
-                    <h1><a class="username-lg">{{username}}</a></h1>
-                    <p style="color: #fff !important;" class="description">{{description}}</p>
-                    <p style="color: #fff !important;" class="status font-weight-light">{{status}} <i
+                    <h1><a class="username-lg" v-html="username"></a></h1>
+                    <p style="color: #fff !important;" class="description" v-html="description"></p>
+                    <p style="color: #fff !important;" class="status font-weight-light" v-html="status"> <i
                             @click="getRandomStatus" class="fas fa-sync-alt"></i></p>
                 </div>
                 <div class="social-media-links-wrapper text-center mt-4">
@@ -46,22 +46,22 @@
             <div class="row text-center mt-5">
                 <div class="col-sm my-3">
                     <h2 class="fs-35 font-weight-light">Latest commit</h2>
-                    <a :href="latest_commit_url" class="ff-mono latest-link">{{latest_commit_message}}</a>
+                    <a :href="latest_commit_url" class="ff-mono latest-link" v-html="latest_commit_message"></a>
                     <br>
-                    <span class="commit-date text-muted">{{latest_commit_date}} in <a :href="latest_commit_repo_url"
-                            class="ff-mono">{{latest_commit_repo}}</a></span>
+                    <span class="commit-date text-muted" v-html="latest_commit_date + ' in '"> <a :href="latest_commit_repo_url"
+                            class="ff-mono" v-html="latest_commit_repo"></a></span>
                 </div>
                 <div class="col-sm my-3">
                     <h2 class="fs-35 font-weight-light">Latest follower</h2>
                     <img width="25" height="25" :src="latest_follower_avatar" class="rounded-circle border">
-                    <a :href="latest_follower_url" class="ff-mono latest-link">{{latest_follower_username}}</a>
-                    <p class="text-muted">#{{user_followers_count}}</p>
+                    <a :href="latest_follower_url" class="ff-mono latest-link" v-html="latest_follower_username"></a>
+                    <p class="text-muted" v-html="'#' + user_followers_count"></p>
                 </div>
                 <div class="col-sm my-3">
                     <h2 class="fs-35 font-weight-light">Latest repository</h2>
-                    <a :href="latest_repo_url" class="ff-mono latest-link">{{latest_repo_name}}</a>
+                    <a :href="latest_repo_url" class="ff-mono latest-link" v-html="latest_repo_name"></a>
                     <br>
-                    <span class="commit-date text-muted">{{latest_repo_date}}</span>
+                    <span class="commit-date text-muted" v-html="latest_repo_date"></span>
                 </div>
             </div>
         </div>
