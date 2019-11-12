@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title id="title">SGezha</title>
     <link rel="shortcut icon" id="favicon" type="image/png" :href="favicon" />
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/vue.min.js"></script>
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -19,7 +19,10 @@
 </head>
 
 <body>
-    <div id="bg"></div>
+    <!-- <div id="bg"></div> -->
+    <div class="preloader">
+        <img src="img/preload.svg" alt="spinner">
+    </div>
     <div id="app">
         <div class="container-fluid">
             <div class="initial-page-wrapper">
@@ -68,20 +71,20 @@
     <script src="js/lib.js"></script>
     <script src="js/master.js"></script>
     <script>
-        window.onload = bgChange();
-        async function bgChange() {
-            let img = await axios.get(`https://nekos.life/api/v2/img/wallpaper`);
-            var myImage = new Image;
-            myImage.src = img.data.url;
-            waitForImageToLoad(myImage).then(() => {
-                document.querySelector(`#bg`).style.background = `url("${img.data.url}") center center / cover`;
-                setTimeout(() => { bgChange(); }, 3000)
-            });
-        }
+        // window.onload = bgChange();
+        // async function bgChange() {
+        //     let img = await axios.get(`https://nekos.life/api/v2/img/wallpaper`);
+        //     var myImage = new Image;
+        //     myImage.src = img.data.url;
+        //     waitForImageToLoad(myImage).then(() => {
+        //         document.querySelector(`#bg`).style.background = `url("${img.data.url}") center center / cover`;
+        //         setTimeout(() => { bgChange(); }, 3000)
+        //     });
+        // }
 
-        function waitForImageToLoad(imageElement) {
-            return new Promise(resolve => { imageElement.onload = resolve })
-        }
+        // function waitForImageToLoad(imageElement) {
+        //     return new Promise(resolve => { imageElement.onload = resolve })
+        // }
     </script>
 </body>
 
