@@ -8,6 +8,9 @@ const fadeEffect = setInterval(() => {
   } else {
     clearInterval(fadeEffect);
     preloader.style.display = "none";
+    setTimeout(() => {
+      document.querySelector(`#app`).style.opacity = 1;
+    }, 200)
   }
 }, 100);
 let config = {
@@ -27,7 +30,7 @@ let config = {
 
 start();
 
-window.onload = () => document.querySelector(`#app`).style.opacity = 1;
+window.onload = () => fadeEffect; 
 
 async function start() {
   let user_data = await axios.get('https://api.github.com/users/' + config['github-username']);
@@ -69,7 +72,6 @@ async function start() {
     el: '#app',
     created: function () {
       this.getRandomStatus();
-      fadeEffect;
     },
     methods: {
       getRandomStatus() {
