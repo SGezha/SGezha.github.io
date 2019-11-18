@@ -32,8 +32,7 @@
                     </div>
                     <h1><a class="username-lg" v-html="username"></a></h1>
                     <p style="color: #fff !important;" class="description" v-html="description"></p>
-                    <p style="color: #fff !important;" class="status font-weight-light" v-html="status"> <i
-                            @click="getRandomStatus" class="fas fa-sync-alt"></i></p>
+                    <p style="color: #fff !important;" class="status font-weight-light" v-html="status"></p>
                 </div>
                 <div class="social-media-links-wrapper text-center mt-4">
                     <a :href="account.url" class="social-url-wrapper p-2" v-for="account in social_media">

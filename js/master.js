@@ -10,7 +10,7 @@ const fadeEffect = setInterval(() => {
     preloader.style.display = "none";
     setTimeout(() => {
       document.querySelector(`#app`).style.opacity = 1;
-    }, 200)
+    }, 500)
   }
 }, 100);
 let config = {
