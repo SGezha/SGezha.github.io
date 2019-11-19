@@ -42,8 +42,8 @@ div#bg {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
-  animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+  -webkit-animation: shine 3s linear infinite;
+  animation: shine 3s linear infinite;
 }
 
 i.fas.fa-sync-alt {
@@ -55,8 +55,8 @@ i.fas.fa-sync-alt {
     text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
-    animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+    -webkit-animation: shine 3s linear infinite;
+    animation: shine 3s linear infinite;
     transform: scale(1.2) translateY(2px);
     cursor: pointer;
 }
@@ -98,8 +98,8 @@ i.fas.fa-sync-alt {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
-  animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+  -webkit-animation: shine 3s linear infinite;
+  animation: shine 3s linear infinite;
 }
 
 .social-media-icon:hover {
@@ -132,8 +132,8 @@ i.fas.fa-sync-alt {
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
-  animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+  -webkit-animation: shine 3s linear infinite;
+  animation: shine 3s linear infinite;
 }
 
 .latest-link {
@@ -147,7 +147,7 @@ i.fas.fa-sync-alt {
   text-fill-color: transparent;
   height: 2px;
   -webkit-text-fill-color: transparent;
-  animation: shine 3s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: shine 3s linear infinite;
 }
 
 i {
