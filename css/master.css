@@ -103,10 +103,10 @@ i.fas.fa-sync-alt {
 }
 
 .social-media-icon:hover {
-  background: #3d373757;
+  background: #3d373794;
   text-decoration: none;
   border-radius: 10px;
-  -webkit-text-fill-color: #0f3443;
+  -webkit-text-fill-color: white;
   transform: scale(1.2);
 }
 
