@@ -2,20 +2,16 @@
 <html lang="en">
 
 <head>
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=no-js/" /></noscript>
+    <noscript><meta http-equiv="refresh" content="0; url=no-js/" /></noscript>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title id="title">SGezha</title>
     <link rel="shortcut icon" id="favicon" type="image/png" :href="favicon" />
     <script src="js/vue.min.js"></script>
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -47,8 +43,8 @@
                     <h2 class="fs-35 font-weight-light">Latest commit</h2>
                     <a :href="latest_commit_url" class="ff-mono latest-link" v-html="latest_commit_message"></a>
                     <br>
-                    <span class="commit-date text-muted" v-html="latest_commit_date + ' in '"> <a :href="latest_commit_repo_url"
-                            class="ff-mono" v-html="latest_commit_repo"></a></span>
+                    <span class="commit-date text-muted" v-html="latest_commit_date + ' in '"> <a
+                            :href="latest_commit_repo_url" class="ff-mono" v-html="latest_commit_repo"></a></span>
                 </div>
                 <div class="col-sm my-3">
                     <h2 class="fs-35 font-weight-light">Latest follower</h2>

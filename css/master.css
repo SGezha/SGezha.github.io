@@ -35,28 +35,28 @@ div#bg {
   font-family: 'Mandali', sans-serif;
   font-size: 50px;
   text-align: center;
-  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background: linear-gradient(to right, #0f3443 20%, #34e89e 40%, #34e89e 60%, #0f3443 80%);
   background-size: 200% auto;
   color: #000;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 1s linear infinite;
-  animation: shine 1s linear infinite;
+  -webkit-animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
 i.fas.fa-sync-alt {
     text-align: center;
-    background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+    background: linear-gradient(to right, #0f3443 20%, #34e89e 40%, #34e89e 60%, #0f3443 80%);
     background-size: 200% auto;
     color: #000;
     background-clip: text;
     text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-animation: shine 1s linear infinite;
-    animation: shine 1s linear infinite;
+    -webkit-animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
+    animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
     transform: scale(1.2) translateY(2px);
     cursor: pointer;
 }
@@ -91,22 +91,22 @@ i.fas.fa-sync-alt {
 .social-media-icon {
   font-size: 40px;
   text-align: center;
-  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background: linear-gradient(to right, #0f3443 20%, #34e89e 40%, #34e89e 60%, #0f3443 80%);
   background-size: 200% auto;
   color: #000;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 1s linear infinite;
-  animation: shine 1s linear infinite;
+  -webkit-animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
 .social-media-icon:hover {
   background: #3d373757;
   text-decoration: none;
   border-radius: 10px;
-  -webkit-text-fill-color: #4568DC;
+  -webkit-text-fill-color: #0f3443;
   transform: scale(1.2);
 }
 
@@ -125,15 +125,15 @@ i.fas.fa-sync-alt {
 .fs-35 {
   font-size: 35px;
   text-align: center;
-  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background: linear-gradient(to right, #0f3443 20%, #34e89e 40%, #34e89e 60%, #0f3443 80%);
   background-size: 200% auto;
   color: #000;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 1s linear infinite;
-  animation: shine 1s linear infinite;
+  -webkit-animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
+  animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
 .latest-link {
@@ -141,13 +141,13 @@ i.fas.fa-sync-alt {
 }
 
 .w-100.mt-5 {
-  background: linear-gradient(to right, #4568DC 20%, #B06AB3 40%, #B06AB3 60%, #4568DC 80%);
+  background: linear-gradient(to right, #0f3443 20%, #34e89e 40%, #34e89e 60%, #0f3443 80%);
   background-size: 200% auto;
   background-clip: text;
   text-fill-color: transparent;
   height: 2px;
   -webkit-text-fill-color: transparent;
-  animation: shine 1s linear infinite;
+  animation: shine 2s cubic-bezier(0.4, 0, 1, 1) infinite;
 }
 
 i {
