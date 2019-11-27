@@ -10,6 +10,13 @@ startAnimation = () => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
 
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    window.addEventListener("resize", ({ target: { innerWidth, innerHeight } }) => {
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+    }, false);
+
     const points = [];
 
     const addPoint = (x, y) => {
