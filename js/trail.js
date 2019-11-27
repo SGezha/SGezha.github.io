@@ -6,17 +6,6 @@ class Point {
     }
 }
 
-window.addEventListener(
-    'resize',
-    () => {
-        this.setState({
-            cHeight: document.body.clientHeight,
-            cWidth: document.body.clientWidth,
-        });
-    },
-    false,
-);
-
 startAnimation = () => {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -37,7 +26,7 @@ startAnimation = () => {
 
     const animatePoints = () => {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-        const duration = 0.5 * (1 * 1000) / 100;
+        const duration = 0.5 * (1 * 1000) / 144;
 
         for (let i = 0; i < points.length; ++i) {
             const point = points[i];
@@ -58,7 +47,7 @@ startAnimation = () => {
                 ctx.lineJoin = 'round';
                 ctx.lineWidth = spreadRate;
 
-                const red = Math.floor(50 - (50 * lifePercent));
+                const red = Math.floor(100 - (100 * lifePercent));
                 const green = Math.floor(200 + (200 * lifePercent));
                 const blue = 158;
                 ctx.strokeStyle = `rgb(${red},${green},${blue}`;
