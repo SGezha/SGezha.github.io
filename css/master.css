@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: white !important;
+  background-color: black !important;
 }
 
 ::-webkit-scrollbar {
@@ -14,6 +14,7 @@ body {
 
 #all {
   display: flex;
+  z-index: 2;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -38,10 +39,10 @@ div#bg {
   left: 0;
   align-items: center;
   width: 100%;
+  background: url("img/bg/0.png") center center / cover;
+  opacity: 0.5;
   overflow: hidden;
-  z-index: -2;
-  opacity: 0.3;
-  transition: 0.5s ease;
+  transition: background 0.5s ease;
 }
 
 .username-lg {
@@ -72,7 +73,7 @@ div#bg {
   font-size: 40px;
   text-align: center;
   /* background: #34e89e; */
-  color: #000;
+  color: transparent;
   transition: color 0.5s linear;
 }
 
@@ -173,8 +174,9 @@ div#bg {
 
 canvas#canvas {
   position: fixed;
-  z-index: -1;
+  z-index: 1;
   top: 0;
+  background: transparent;
   left: 0;
   height: auto;
   width: 100vw;
@@ -184,12 +186,24 @@ canvas#canvas {
   canvas#canvas {
     display: none;
   }
-  body {
-    background: white !important;
-  }
   #all {
     display: block;
     position: relative;
     padding-top: 10%;
   }
+}
+
+.progress-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2;
+  background: transparent;
+}
+
+.progress-mybar {
+  background: black;
+  z-index: 2;
+  transition: background 0.5s linear;
 }

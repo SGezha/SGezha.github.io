@@ -41,7 +41,7 @@ startAnimation = () => {
                 lastPoint = points[i - 1];
             } else lastPoint = point;
 
-            point.lifetime += 0.1; 
+            point.lifetime += 0.1;
 
             if (point.lifetime > duration) {
                 points.shift();
@@ -76,18 +76,35 @@ function rand() {
     document.querySelector(".username-lg").style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
     document.querySelector(".w-100").style.background = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`
     document.querySelector(".description").style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
+    document.querySelector("#myBar").style.background = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
     let d = document.querySelectorAll(".social-media-icon");
-    for(let i = 0; i < d.length; i++) {
+    for (let i = 0; i < d.length; i++) {
         d[i].style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
     }
     let t = document.querySelectorAll(".fs-35");
-    for(let i = 0; i < t.length; i++) {
+    for (let i = 0; i < t.length; i++) {
         t[i].style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
     }
-    setTimeout(() => { rand(); }, 1000);
+    document.querySelector("#bg").style.background = `url("img/bg/${randomInteger(0, 20)}.png") center center / cover`;
+    setTimeout(() => { rand(); }, 5000);
 }
 
-window.onload = function () {
-    startAnimation();
-    rand();
+
+function randomInteger(min, max) {
+    return Math.floor(min + Math.random() * (max + 1 - min));
+}
+
+function move() {
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var id = setInterval(frame, 50);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+            move();
+        } else {
+            width++;
+            elem.style.width = width + '%';
+        }
+    }
 }
