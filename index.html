@@ -1,87 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <noscript><meta http-equiv="refresh" content="0; url=no-js/" /></noscript>
-    <meta charset="UTF-8">
-    <meta name = "description" content = "Sasha Gezha - Full Stack Developer" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <noscript><meta http-equiv="refresh" content="0; url=no-js/"/></noscript>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sasha Gezha - Full Stack Developer" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title id="title">SGezha</title>
-    <link rel="shortcut icon" id="favicon" type="image/png" href="img/avatar(anime).png"/>
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="fontawsome/css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link
+      rel="shortcut icon"
+      id="favicon"
+      type="image/png"
+      href="img/avatar(anime).png"
+    />
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="fontawsome/css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <script src="js/vue.min.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="progress-block">
-        <div id="myBar" class="progress-mybar" style="height: 3px; width:0%;"></div>
+      <div
+        id="myBar"
+        class="progress-mybar"
+        style="height: 3px; width:0%;"
+      ></div>
     </div>
     <div id="bg"></div>
     <div class="preloader">
-        <img src="img/preload.svg" alt="spinner">
+      <img src="img/preload.svg" alt="spinner" />
     </div>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+      (function(m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function() {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-    ym(56488048, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-    });
+      ym(56488048, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+      });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/56488048" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/56488048"
+          style="position:absolute; left:-9999px;"
+          alt=""
+        /></div
+    ></noscript>
     <!-- /Yandex.Metrika counter -->
     <div id="all">
-        <div id="app">
-            <div class="container-fluid">
-                <div class="initial-page-wrapper">
-                    <div class="profile-preview text-center mt-5">
-                        <!-- <div class="avatar-block">
+      <div id="app">
+        <div class="container-fluid">
+          <div class="initial-page-wrapper">
+            <div class="profile-preview text-center mt-5">
+              <!-- <div class="avatar-block">
                             <img class="avatar rounded-circle" :src="avatar">
                         </div> -->
-                        <h1><a class="username-lg" v-html="username"></a></h1>
-                        <p class="description" v-html="description"></p>
-                        <!-- <p style="color: #fff !important;" class="status font-weight-light" v-html="status"></p> -->
-                    </div>
-                    <div class="social-media-links-wrapper text-center mt-4">
-                        <a :href="account.url" class="social-url-wrapper p-2" v-for="account in social_media">
-                            <i :class="account.fa_icon" class="social-media-icon p-2 rounded"
-                                :style="{color: account.color}"></i>
-                        </a>
-                    </div>
-                </div>
-                <hr class="w-100 mt-5">
-                <div class="row text-center mt-5">
-                    <div class="col-sm my-3">
-                        <h2 class="fs-35 font-weight-light">Latest commit</h2>
-                        <a :href="latest_commit_url" class="ff-mono latest-link" v-html="latest_commit_message"></a>
-                        <br>
-                        <span class="commit-date text-muted" v-html="latest_commit_date + ' in '"> <a
-                                :href="latest_commit_repo_url" class="ff-mono" v-html="latest_commit_repo"></a></span>
-                    </div>
-                    <div class="col-sm my-3">
-                        <h2 class="fs-35 font-weight-light">Latest follower</h2>
-                        <img width="25" height="25" :src="latest_follower_avatar" class="rounded-circle border">
-                        <a :href="latest_follower_url" class="ff-mono latest-link" v-html="latest_follower_username"></a>
-                        <p class="text-muted" v-html="'#' + user_followers_count"></p>
-                    </div>
-                    <div class="col-sm my-3">
-                        <h2 class="fs-35 font-weight-light">Latest repository</h2>
-                        <a :href="latest_repo_url" class="ff-mono latest-link" v-html="latest_repo_name"></a>
-                        <br>
-                        <span class="commit-date text-muted" v-html="latest_repo_date"></span>
-                    </div>
-                </div>
+              <h1><a class="username-lg" v-html="username"></a></h1>
+              <p class="description" v-html="description"></p>
+              <!-- <p style="color: #fff !important;" class="status font-weight-light" v-html="status"></p> -->
             </div>
+            <div class="social-media-links-wrapper text-center mt-4">
+              <a
+                :href="account.url"
+                class="social-url-wrapper p-2"
+                v-for="account in social_media"
+              >
+                <i
+                  :class="account.fa_icon"
+                  class="social-media-icon p-2 rounded"
+                  :style="{color: account.color}"
+                ></i>
+              </a>
+            </div>
+          </div>
+          <hr class="w-100 mt-5" />
+          <div class="row text-center mt-5">
+            <div class="col-sm my-3">
+              <h2 class="fs-35 font-weight-light">Latest commit</h2>
+              <a
+                :href="latest_commit_url"
+                class="ff-mono latest-link"
+                v-html="latest_commit_message"
+              ></a>
+              <br />
+              <span
+                class="commit-date text-muted"
+                v-html="latest_commit_date + ' in '"
+              >
+                <a
+                  :href="latest_commit_repo_url"
+                  class="ff-mono"
+                  v-html="latest_commit_repo"
+                ></a
+              ></span>
+            </div>
+            <div class="col-sm my-3">
+              <h2 class="fs-35 font-weight-light">Latest follower</h2>
+              <img
+                width="25"
+                height="25"
+                :src="latest_follower_avatar"
+                class="rounded-circle border"
+              />
+              <a
+                :href="latest_follower_url"
+                class="ff-mono latest-link"
+                v-html="latest_follower_username"
+              ></a>
+              <p class="text-muted" v-html="'#' + user_followers_count"></p>
+            </div>
+            <div class="col-sm my-3">
+              <h2 class="fs-35 font-weight-light">Latest repository</h2>
+              <a
+                :href="latest_repo_url"
+                class="ff-mono latest-link"
+                v-html="latest_repo_name"
+              ></a>
+              <br />
+              <span
+                class="commit-date text-muted"
+                v-html="latest_repo_date"
+              ></span>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <canvas id="canvas" class="canvas" width="1280px" height="800px"></canvas>
     <script src="js/axios.min.js"></script>
@@ -90,21 +158,20 @@
     <script src="js/master.js"></script>
     <script src="js/trail.js"></script>
     <script>
-        // window.onload = bgChange();
-        // async function bgChange() {
-        //     let img = await axios.get(`https://nekos.life/api/v2/img/wallpaper`);
-        //     var myImage = new Image;
-        //     myImage.src = img.data.url;
-        //     waitForImageToLoad(myImage).then(() => {
-        //         document.querySelector(`#canvas`).style.background = `url("${img.data.url}") center center / cover`;
-        //         setTimeout(() => { bgChange(); }, 3000)
-        //     });
-        // }
+      // window.onload = bgChange();
+      // async function bgChange() {
+      //     let img = await axios.get(`https://nekos.life/api/v2/img/wallpaper`);
+      //     var myImage = new Image;
+      //     myImage.src = img.data.url;
+      //     waitForImageToLoad(myImage).then(() => {
+      //         document.querySelector(`#canvas`).style.background = `url("${img.data.url}") center center / cover`;
+      //         setTimeout(() => { bgChange(); }, 3000)
+      //     });
+      // }
 
-        // function waitForImageToLoad(imageElement) {
-        //     return new Promise(resolve => { imageElement.onload = resolve })
-        // }
+      // function waitForImageToLoad(imageElement) {
+      //     return new Promise(resolve => { imageElement.onload = resolve })
+      // }
     </script>
-</body>
-
+  </body>
 </html>

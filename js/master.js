@@ -1,4 +1,4 @@
-const preloader = document.querySelector('.preloader');
+const preloader = document.querySelector(".preloader");
 const fadeEffect = setInterval(() => {
   if (!preloader.style.opacity) {
     preloader.style.opacity = 1;
@@ -6,63 +6,87 @@ const fadeEffect = setInterval(() => {
   if (preloader.style.opacity > 0) {
     preloader.style.opacity -= 0.1;
   } else {
-    move();
     startAnimation();
     clearInterval(fadeEffect);
     preloader.style.display = "none";
     setTimeout(() => {
       document.querySelector(`#app`).style.opacity = 1;
       rand();
-    }, 500)
+    }, 500);
   }
 }, 100);
 let config = {
   "github-username": "SGezha",
-  "description": "Full Stack Developer",
-  "status": "",
+  description: "Full Stack Developer",
+  status: "",
   "social-media": [
-    { "fa_icon": "fab fa-github ", "url": "https://github.com/SGezha", "color": "black" },
-    { "fa_icon": "far fa-money-bill-alt ", "url": "https://qiwi.me/66bd80aa-f73e-4fef-89f1-656adfd7c659", "color": "black" },
-    { "fa_icon": "fab fa-vk ", "url": "https://vk.com/4ffun", "color": "black" },
-    { "fa_icon": "fab fa-telegram ", "url": "https://t.me/FuNSasha", "color": "black" },
-    { "fa_icon": "fab fa-twitch ", "url": "https://www.twitch.tv/4funsasha", "color": "black" },
-    { "fa_icon": "fab fa-youtube ", "url": "https://www.youtube.com/channel/UCJ1HJIEN5B_Aabm941F0zjQ", "color": "black" },
-    { "fa_icon": "fab fa-discord ", "url": "https://discord.gg/Wsa3944", "color": "black" },
-    { "fa_icon": "fas fa-qrcode ", "url": "img/social.png", "color": "black" }
+    {
+      fa_icon: "fab fa-github ",
+      url: "https://github.com/SGezha",
+      color: "black"
+    },
+    {
+      fa_icon: "far fa-money-bill-alt ",
+      url: "https://qiwi.me/66bd80aa-f73e-4fef-89f1-656adfd7c659",
+      color: "black"
+    },
+    { fa_icon: "fab fa-vk ", url: "https://vk.com/4ffun", color: "black" },
+    {
+      fa_icon: "fab fa-telegram ",
+      url: "https://t.me/FuNSasha",
+      color: "black"
+    },
+    {
+      fa_icon: "fab fa-twitch ",
+      url: "https://www.twitch.tv/4funsasha",
+      color: "black"
+    },
+    {
+      fa_icon: "fab fa-youtube ",
+      url: "https://www.youtube.com/channel/UCJ1HJIEN5B_Aabm941F0zjQ",
+      color: "black"
+    },
+    {
+      fa_icon: "fab fa-discord ",
+      url: "https://discord.gg/Wsa3944",
+      color: "black"
+    },
+    { fa_icon: "fas fa-qrcode ", url: "img/social.png", color: "black" }
   ]
 };
 
 start();
 
-window.onload = () => fadeEffect; 
+window.onload = () => fadeEffect;
 
 async function start() {
-  let user_data = await axios.get('https://api.github.com/users/' + config['github-username']);
+  let user_data = await axios.get(
+    "https://api.github.com/users/" + config["github-username"]
+  );
   user_data = user_data.data;
-  let repos = await axios.get(user_data['repos_url']);
+  let repos = await axios.get(user_data["repos_url"]);
   repos = user_data.data;
 
   let user = {
-    id: user_data['id'],
-    username: user_data['login'],
-    avatar: user_data['avatar_url'],
-    href: 'https://github.com/' + user_data['username'],
-    name: user_data['name'],
-    followers_count: user_data['followers'],
-    location: user_data['location'],
+    id: user_data["id"],
+    username: user_data["login"],
+    avatar: user_data["avatar_url"],
+    href: "https://github.com/" + user_data["username"],
+    name: user_data["name"],
+    followers_count: user_data["followers"],
+    location: user_data["location"],
     repos: repos
   };
 
-
   let title = new Vue({
-    el: '#title',
+    el: "#title",
     data: {
       username: user.username
     }
   });
 
   let favicon = new Vue({
-    el: '#favicon',
+    el: "#favicon",
     data: {
       favicon: user.avatar
     }
@@ -70,10 +94,13 @@ async function start() {
 
   let latest_repo = await get_latest_repo(user.username);
   let latest_commit = await get_latest_commit(user.username);
-  let latest_follower = await get_latest_follower(user.followers_count, user.username);
+  let latest_follower = await get_latest_follower(
+    user.followers_count,
+    user.username
+  );
 
   let app = new Vue({
-    el: '#app',
+    el: "#app",
     created: function () {
       this.getRandomStatus();
     },
@@ -88,9 +115,9 @@ async function start() {
       location: user.location,
       name: user.name,
       user_url: user.href,
-      social_media: config['social-media'],
-      description: config['description'],
-      status: config['status'],
+      social_media: config["social-media"],
+      description: config["description"],
+      status: config["status"],
       latest_commit_url: latest_commit.commit.url,
       latest_commit_repo_url: latest_commit.repo.url,
       latest_commit_repo: latest_commit.repo.name,
