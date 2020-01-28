@@ -5,6 +5,7 @@
 
 body {
   background-color: black !important;
+  text-shadow: 0 2px 2px black, 0 3px 3px black;
 }
 
 ::-webkit-scrollbar {
