@@ -100,11 +100,11 @@ function rand() {
 	myImage.src = `img/bg/${randomInteger(0, 20)}.png`;
 	waitForImageToLoad(myImage).then(() => {
 		document.querySelector(`#bg`).style.background = `url("img/bg/${randomInteger(0, 20)}.png") center center / cover`;
-		move();
+		setTimeout(() => {
+			rand();
+			move();
+		}, 5000);
 	});
-	setTimeout(() => {
-		rand();
-	}, 5000);
 }
 
 function randomInteger(min, max) {
