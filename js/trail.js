@@ -96,15 +96,14 @@ function rand() {
 	for (let i = 0; i < t.length; i++) {
 		t[i].style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
 	}
-	var myImage = new Image();
-	myImage.src = `img/bg/${randomInteger(0, 20)}.jpg`;
-	waitForImageToLoad(myImage).then(() => {
-		document.querySelector(`#bg`).style.background = `url("img/bg/${randomInteger(0, 20)}.jpg") center center / cover`;
-		setTimeout(() => {
-			rand();
-			move();
-		}, 5000);
-	});
+	// var myImage = new Image();
+	// myImage.src = `img/bg/${randomInteger(0, 20)}.jpg`;
+	// waitForImageToLoad(myImage).then(() => {
+	// 	document.querySelector(`#bg`).style.background = `url("img/bg/${randomInteger(0, 20)}.jpg") center center / cover`;
+	setTimeout(() => {
+		rand();
+		move();
+	}, 5000);
 }
 
 function randomInteger(min, max) {
