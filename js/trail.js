@@ -87,7 +87,6 @@ function rand() {
 	document.querySelector(".username-lg").style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
 	document.querySelector(".w-100").style.background = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
 	document.querySelector(".description").style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
-	document.querySelector("#myBar").style.background = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
 	let d = document.querySelectorAll(".social-media-icon");
 	for (let i = 0; i < d.length; i++) {
 		d[i].style.color = `rgb(${rgbRand.r},${rgbRand.g},${rgbRand.b}`;
@@ -102,7 +101,6 @@ function rand() {
 	// 	document.querySelector(`#bg`).style.background = `url("img/bg/${randomInteger(0, 20)}.jpg") center center / cover`;
 	setTimeout(() => {
 		rand();
-		move();
 	}, 5000);
 }
 
@@ -110,19 +108,7 @@ function randomInteger(min, max) {
 	return Math.floor(min + Math.random() * (max + 1 - min));
 }
 
-function move() {
-	var elem = document.getElementById("myBar");
-	var width = 0;
-	var id = setInterval(frame, 50);
-	function frame() {
-		if (width >= 100) {
-			clearInterval(id);
-		} else {
-			width++;
-			elem.style.width = width + "%";
-		}
-	}
-}
+
 
 function waitForImageToLoad(imageElement) {
 	return new Promise(resolve => {

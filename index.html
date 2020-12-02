@@ -15,12 +15,10 @@
   <link rel="stylesheet" href="fontawsome/css/all.min.css" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <script src="js/vue.min.js"></script>
+  <script src="js/circular-audio-wave.min.js"></script>
 </head>
 
 <body>
-  <div class="progress-block">
-    <div id="myBar" class="progress-mybar" style="height: 3px; width:0%;"></div>
-  </div>
   <div id="bg"></div>
   <div class="preloader">
     <img src="img/preload.svg" alt="spinner" />
@@ -102,6 +100,7 @@
       </div>
     </div>
   </div>
+  <div id="chart-container" style="opacity: 1;width: 100vw;height: 100vh;-webkit-tap-highlight-color: transparent;user-select: none;position: absolute;"></div>
   <canvas id="canvas" class="canvas" width="1280px" height="800px"></canvas>
   <canvas id='canv' class="canvas2" width="1280px" height="800px"></canvas>
   <script src="js/axios.min.js"></script>

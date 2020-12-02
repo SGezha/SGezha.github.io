@@ -12,7 +12,6 @@ const fadeEffect = setInterval(() => {
     setTimeout(() => {
       document.querySelector(`#app`).style.opacity = 1;
       rand();
-      move();
     }, 500);
   }
 }, 100);
