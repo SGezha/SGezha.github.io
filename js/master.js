@@ -50,8 +50,7 @@ let config = {
       fa_icon: "fab fa-discord ",
       url: "https://discord.gg/Wsa3944",
       color: "black"
-    },
-    { fa_icon: "fas fa-qrcode ", url: "img/social.png", color: "black" }
+    }
   ]
 };
 
